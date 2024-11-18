@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Word ☁️</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <script src="movieTitle.js"></script>
+  <script src="movie.js"></script>
+  <script src="sketch.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #movie-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px;
+    }
+    .movie {
+      padding: 10px;
+      background-color: #f4f4f4;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .movie:hover {
+      transform: scale(1.05);
+    }
+    #details-container {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    #details-container.loading {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="movie-list"></div>
+  <div id="details-container" class="loading">Click on a movie to see details!</div>
+</body>
+</html>
