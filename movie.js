@@ -65,11 +65,9 @@ class Movie extends MovieTitle {
     }
 
     async handleDetails() {
-        // Fetch both APIs
         await this.fetchRandomWord();
         await this.fetchDetails();
 
-        // Navigate to the details page
         const detailsPage = `
             <html lang="en">
             <head>
@@ -101,7 +99,7 @@ class Movie extends MovieTitle {
             newWindow.document.write(detailsPage);
             newWindow.document.close();
         } else {
-            alert('Unable to open details page. Please check your browser settings.');
+            alert('Unable to open details page.');
         }
     }
 }
