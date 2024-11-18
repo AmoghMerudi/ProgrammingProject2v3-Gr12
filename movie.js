@@ -87,7 +87,7 @@ class Movie extends MovieTitle {
                 <h1>${this.title}</h1>
                 <p><strong>Popularity:</strong> ${this.popularity}</p>
                 <p><strong>Revenue:</strong> ${this.revenue}</p>
-                <p><strong>Random Word:</strong> ${this.randomWord}</p>
+                <p><strong>Word Associated:</strong> ${this.randomWord}</p>
                 <p><strong>Genre:</strong> ${this.genre}</p>
                 <p><strong>Release Date:</strong> ${this.releaseDate}</p>
             </body>
