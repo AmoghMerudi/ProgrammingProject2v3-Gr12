@@ -14,6 +14,7 @@ class MovieTitle {
      * @returns {String} RGB color string representing brightness.
      */
     getColor() {
+        console.log(this.revenueMax);
         const revenueMax = 600000000;
         const normalizedRevenue = constrain(this.revenue / revenueMax, 0, 1);
         const colorStops = [
