@@ -18,7 +18,7 @@ function loadError() {
 }
 
 async function setup() {
-    noCanvas(); // No need for p5 canvas since we're using HTML elements
+    createCanvas(windowWidth, windowHeight);
     await handleData();
     displayMovies();
 }
@@ -45,7 +45,7 @@ function displayMovies() {
         movieDiv.style.backgroundColor = movie.getColor();
 
         movieDiv.addEventListener('click', async () => {
-            await movie.handleDetails(); // Fetch data and open the details page
+            await movie.handleDetails(); 
         });
 
         movieList.appendChild(movieDiv);
