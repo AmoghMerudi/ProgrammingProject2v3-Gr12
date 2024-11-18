@@ -64,42 +64,27 @@ class Movie extends MovieTitle {
         }
     }
 
-    async handleDetails() {
+    async handleDetails(event) {
         await this.fetchRandomWord();
         await this.fetchDetails();
-
-        const detailsPage = `
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>${this.title} Details</title>
-                <style>
-                    body {
-                        font-family: Arial, sans-serif;
-                        margin: 20px;
-                        padding: 20px;
-                        background-color: #f9f9f9;
-                    }
-                </style>
-            </head>
-            <body>
-                <h1>${this.title}</h1>
-                <p><strong>Popularity:</strong> ${this.popularity}</p>
-                <p><strong>Revenue:</strong> ${this.revenue}</p>
-                <p><strong>Word Associated:</strong> ${this.randomWord}</p>
-                <p><strong>Genre:</strong> ${this.genre}</p>
-                <p><strong>Release Date:</strong> ${this.releaseDate}</p>
-            </body>
-            </html>
+    
+        const detailsContainer = document.getElementById('details-container');
+        detailsContainer.classList.remove('loading');
+        detailsContainer.innerHTML = `
+            <h2>${this.title}</h2>
+            <p><strong>Popularity:</strong> ${this.popularity}</p>
+            <p><strong>Revenue:</strong> ${this.revenue}</p>
+            <p><strong>Word Associated:</strong> ${this.randomWord}</p>
+            <p><strong>Genre:</strong> ${this.genre}</p>
+            <p><strong>Release Date:</strong> ${this.releaseDate}</p>
         `;
-
-        const newWindow = window.open();
-        if (newWindow) {
-            newWindow.document.write(detailsPage);
-            newWindow.document.close();
-        } else {
-            alert('Unable to open details page.');
-        }
+    
+        const rect = event.target.getBoundingClientRect();
+        detailsContainer.style.position = "absolute";
+        detailsContainer.style.top = `${rect.top + window.scrollY}px`;
+        detailsContainer.style.left = `${rect.right + 10}px`;
+        detailsContainer.style.display = "block"; 
     }
+    
+    
 }

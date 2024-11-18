@@ -44,10 +44,11 @@ function displayMovies() {
         movieDiv.style.fontSize = `${movie.getTextSize()}px`;
         movieDiv.style.backgroundColor = movie.getColor();
 
-        movieDiv.addEventListener('click', async () => {
-            await movie.handleDetails(); 
+        movieDiv.addEventListener('click', async (event) => {
+            await movie.handleDetails(event); 
         });
 
         movieList.appendChild(movieDiv);
     });
 }
+

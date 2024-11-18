@@ -11,6 +11,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
+      position: relative;
     }
     #movie-list {
       display: flex;
@@ -30,16 +31,16 @@
       transform: scale(1.05);
     }
     #details-container {
-      margin-top: 20px;
+      display: none; 
+      position: absolute;
+      z-index: 1000;
       padding: 20px;
       border: 1px solid #ddd;
       border-radius: 5px;
       background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
-    #details-container.loading {
-      display: none;
-    }
-  </style>
+  </style>  
 </head>
 <body>
   <div id="movie-list"></div>
