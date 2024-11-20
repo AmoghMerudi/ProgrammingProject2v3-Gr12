@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------
+Stack Overflow used for API handling 
+---------------------------------------------------------------------------- */
+
 let table; // Stores the loaded CSV file
 let movies = []; // Array to hold instances of the Movie class
 
