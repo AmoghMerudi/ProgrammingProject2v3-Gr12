@@ -32,4 +32,4 @@
 1. Clone this repository:
    ```bash
    git clone <https://github.com/AmoghMerudi/ProgrammingProject2v3-Gr12.git>
-   cd movie-constellations
+   cd movie-word ☁️
